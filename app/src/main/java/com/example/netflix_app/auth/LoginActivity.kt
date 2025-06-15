@@ -1,11 +1,10 @@
-package com.example.netflix_app
+package com.example.netflix_app.auth
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.netflix_app.R
 import com.example.netflix_app.profiles.ProfilesActivity
 import com.google.android.material.button.MaterialButton
 

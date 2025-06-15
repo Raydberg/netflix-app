@@ -1,11 +1,13 @@
 package com.example.netflix_app.profiles
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.netflix_app.R
+import com.example.netflix_app.movies.MovieActivity
 
 class ProfilesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +31,10 @@ class ProfilesActivity : AppCompatActivity() {
             Profile(R.drawable.ic_profile_1, "Drashti"),
             Profile(R.drawable.ic_profile_1, "Drashti"),
         )
-        val adapter = ProfileAdapter(listProfiles)
+        val adapter = ProfileAdapter(listProfiles) {
+            val intent = Intent(this, MovieActivity::class.java)
+            startActivity(intent)
+        }
         rvProfiles.adapter = adapter
     }
 }

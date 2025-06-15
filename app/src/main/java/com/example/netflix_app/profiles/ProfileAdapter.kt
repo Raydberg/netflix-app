@@ -4,13 +4,16 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class ProfileAdapter(val listProfile: List<Profile>) : RecyclerView.Adapter<ProfileViewHolder>() {
+class ProfileAdapter(
+    val listProfile: List<Profile>,
+    private val onItemClick: () -> Unit
+) : RecyclerView.Adapter<ProfileViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): ProfileViewHolder {
         val inflate = LayoutInflater.from(parent.context)
-        return ProfileViewHolder(inflate, parent)
+        return ProfileViewHolder(inflate, parent,onItemClick)
     }
 
     override fun onBindViewHolder(
